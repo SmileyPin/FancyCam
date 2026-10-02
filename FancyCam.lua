@@ -4,7 +4,7 @@ local CAM_HEIGHT = 15*FRACUNIT
 local CAM_LAG = FRACUNIT/6
 
 addHook("MapLoad", function()
-    solcamActive = mapheaderinfo[gamemap] and mapheaderinfo[gamemap]["lua.solcam"] == "on"
+    local solcamActive = mapheaderinfo[gamemap] and mapheaderinfo[gamemap]["lua.solcam"] == "on"
 end)
 
 rawset(_G, "CR_GRINDRAIL", 3888)

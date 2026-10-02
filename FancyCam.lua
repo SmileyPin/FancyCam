@@ -35,13 +35,9 @@ addHook("ThinkFrame", function()
 
                 P_TeleportCameraMove(cam, x, y, z)
 
-                if p.mo.z < prevz and P_IsObjectOnGround(p.mo) then
-                    cam.momz = cam.momz + ((p.mo.z - prevz) + CAM_HEIGHT*2)
-                    cam.aiming = cam.aiming - (p.mo.z - prevz)
-                elseif p.mo.z > prevz and P_IsObjectOnGround(p.mo) then
-                    cam.momz = cam.momz - ((p.mo.z - prevz) + CAM_HEIGHT/2)
-                    cam.aiming = cam.aiming + (p.mo.z - prevz)
-                end
+                
+                cam.momz = $0 + (p.mo.z - prevz)
+                cam.aiming = $0 + (p.mo.z - prevz)
             end
         end
 
